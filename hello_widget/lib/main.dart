@@ -12,14 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Hello Widget",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Fernando Feliansyah"),
-        ),
-        body: const Center(
-          child: Text("Hello Fernando Feliansyah"),
-        ),
-      )
+      home: WidgetDemo(),
     );
   }
 }
