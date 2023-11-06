@@ -123,10 +123,26 @@ class DetailScreen extends StatelessWidget {
                           child: GestureDetector(
                             onTap: () {},
                             child: Container(
-                              decoration: BoxDecoration(),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: Colors.deepPurple.shade100,
+                                  width: 2,
+                                ),
+                              ),
                                 child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
                                   child: CachedNetworkImage(
-                                   imageUrl: candi.imageUrls[index]
+                                   imageUrl: candi.imageUrls[index],
+                                   width: 120,
+                                   height: 120,
+                                   fit: BoxFit.cover,
+                                   placeholder: (context, url) => Container(
+                                    width: 120,
+                                    height: 120,
+                                    color: Colors.deepPurple[50],
+                                   ),
+                                   errorWidget: (context, url, error) => Icon(Icons.error),
                                   ),
                                 ), 
                             ),

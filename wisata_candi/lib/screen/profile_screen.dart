@@ -10,7 +10,7 @@ class ProfileScreen extends StatefulWidget {
     
 class _ProfileScreen extends State<ProfileScreen> {
   // TODO : 1. Deklarasi variabel (state) yang dibutuhkan 
-  bool isSignIn = false;
+  bool isSignIn = true;
   String fullName = "";
   String userName = "";
   int favoriteCandiCount = 0;
@@ -110,6 +110,7 @@ class _ProfileScreen extends State<ProfileScreen> {
                         value:
                             favoriteCandiCount > 0 ? '$favoriteCandiCount' : '',
                         iconColor: Colors.red),
+                     // TODO : 4. Buat bagian ProfileAction yang berisi TextButton Sign In / Sign Out
                     const SizedBox(
                       height: 5,
                     ),
@@ -139,8 +140,6 @@ class _ProfileScreen extends State<ProfileScreen> {
                   ],
                 ),
               ),
-                // TODO : 4. Buat bagian ProfileAction yang berisi TextButton Sign In / Sign Out
-                // 
               ],
             ),
           )   
