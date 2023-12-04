@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../hello_widget"
+		},
+		{
+			"path": "../../Mahasiswa"
+		}
+	],
+	"settings": {}
+}

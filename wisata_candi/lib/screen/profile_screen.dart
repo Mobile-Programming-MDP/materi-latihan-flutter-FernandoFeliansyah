@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wisata_candi/widgets/profile_info_item.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreen();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
     
-class _ProfileScreen extends State<ProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   // TODO : 1. Deklarasi variabel (state) yang dibutuhkan 
-  bool isSignIn = true;
-  String fullName = "";
-  String userName = "";
+  bool isSignIn = false;
+  String fullName = '';
+  String userName = '';
   int favoriteCandiCount = 0;
+  late Color iconColor;
 
+  Future<void> simpanData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isSignIn = prefs.getBool('isSignIn') ?? false;
+      fullName = prefs.getString('fullname') ?? '';
+      userName = prefs.getString('username') ?? '';
+      favoriteCandiCount = prefs.getInt('favoriteCandiCount') ?? 0;
+    });
+  }
+
+  void signIn() {
+    Navigator.pushNamed(context, '/signin');
+  }
 
   @override
   Widget build(BuildContext context) {
